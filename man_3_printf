@@ -1,4 +1,4 @@
-.TH man 3 "27 July 2021" "0.1" "Custom _printf function"
+.TH man "13 March 2021" "0.01" "_printf man page"
 .SH _PRINTF()
 
 .SH NAME
@@ -84,4 +84,6 @@ A blank should be left before a positive number (or empty string) produced by a 
 .I printf(1), asprintf(3), dprintf(3), scanf(3), setlocale(3), wcrtomb(3), wprintf(3), locale(5)
 .SH BUGS
 .B '-', '+', ' '(space)
-flags work almost flawlessly, but still we are having issues
+
+.SH AUTHOR
+Nadduli Dan and Nakanwagi Stacey
