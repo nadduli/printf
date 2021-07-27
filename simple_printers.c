@@ -22,7 +22,7 @@ int print_from_to(char *start, char *stop, char *except)
 }
 
 /**
- * print_rev - prints string in reverse
+ * print_rev - prints string the in reverse
  * @ap: string
  * @params: the parameters struct
  *

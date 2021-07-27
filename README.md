@@ -25,7 +25,7 @@ This is repository is an implementation of printf, this implementation demonstar
 
 Demonstration
 
-A demonstration of the _printf function is illustrated below. It is important that the main.c is in the same directory as the _printf function and its other supporting functions, the program is compiled with the command gcc -Wall -Wextra -Werror -pedantic -Wno-format *.c. The description and illustration is as follows;
+This is a demonstration of the _printf function is illustrated below. It is important that the main.c is in the same directory as the _printf function and its other supporting functions, the program is compiled with the command gcc -Wall -Wextra -Werror -pedantic -Wno-format *.c. The description and illustration is as follows;
 
 _printf takes a formatted string as input, it checks for special characters in the string called specifiers which start with the % sign, and replaces them with their values in the formatted string and prints it to the stdout. These specifiers are:
 

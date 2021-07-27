@@ -44,7 +44,7 @@ return (NULL);
  * @ap: argument pointer
  * @params: the parameters struct
  *
- * Return: the number of bytes printed
+ * Return: the number of bytes that are printed
  */
 int get_print_func(char *s, va_list ap, params_t *params)
 {

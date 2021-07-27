@@ -39,7 +39,7 @@ return (ptr);
 }
 
 /**
- * print_unsigned - prints unsigned integer numbers
+ * print_unsigned - prints the unsigned integer numbers
  * @ap: argument pointer
  * @params: the parameters struct
  *

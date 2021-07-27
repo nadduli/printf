@@ -5,7 +5,7 @@
  *
  * @format: a pointer to the format string
  *
- * Return: on success, returns the number of characters printed
+ * Return: on success, it returns the number of characters printed
  */
 int _printf(const char *format, ...)
 {
