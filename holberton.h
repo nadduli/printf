@@ -1,30 +1,52 @@
-#ifndef PRINT_F
-#define PRINT_F
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
 
-#include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <unistd.h>
+#include <limits.h>
 
+#define _INT_MAX_ 2147483647
+/*fff*/
 /**
- * struct convert - defines a structure for symbols and functions
- * @sym: The operator
- * @f: function associated
+ * struct Ftype - Struct operator
+ *
+ * @c: Parameter char (%s, %c, %i, ...)
+ * @f: The function associated
  */
-struct convert
+struct Ftype
 {
-	char *sym;
+	char c;
 	int (*f)(va_list);
-};
-typedef struct convert conver_t;
+} ftype;
+typedef struct Ftype f_type;
 
-/* Main functions */
-int parser(const char *format, conver_t f_list[], va_list arg_list);
+/* main functions */
 int _printf(const char *format, ...);
-int _write_char(char);
-int print_char(va_list);
-int print_string(va_list);
-int print_percent(va_list);
-int print_integer(va_list);
-int print_number(va_list);
+int select_function(char format, va_list list);
+
+/* print functions : type char */
+int print_char(va_list lista);
+int print_str(va_list lista);
+int print_rev_str(va_list lista);
+int print_Str_Ascii(va_list arg);
+
+/* print functions : type numbers */
+int putN(unsigned int n, unsigned int b, char *nums);
+int print_int(va_list lista);
+int print_bin(va_list lista);
+int print_unsigned(va_list lista);
+
+/* print bases */
+int print_octal(va_list lista);
+int print_rot13(va_list lista);
+int print_hex(va_list lista);
+int print_HEX(va_list lista);
+
+/* functions from standar library in f_library like putchar and others*/
+int _putchar(char c);
+int _strlen(char *s);
+int _atoi(char *str);
+int	print_HEXADECIMAL(unsigned int n);
 
 #endif
