@@ -1,7 +1,7 @@
 PrintF -Team Project By Nadduli Dan and Nakanwagi Stacey.
 
 
-This is repository is an implementation of printf by Taremowei Appah and Girum Ajebe, this implementation demonstartes the use of structs, typedefs, function pointers,variadic functions, write, as well as basic functions and loops in C. The files in this repository are compiled with gcc -Wall -Wextra -Werror -pedantic -Wno-format *.c, and they demonstrate how printf works for various data types given the specifier. The files include;
+This is repository is an implementation of printf, this implementation demonstartes the use of structs, typedefs, function pointers,variadic functions, write, as well as basic functions and loops in C. The files in this repository are compiled with gcc -Wall -Wextra -Werror -pedantic -Wno-format *.c, and they demonstrate how printf works for various data types given the specifier. The files include;
 
     holberton.h: A header file containing are function prototypes used for the implementation of printf.
 
