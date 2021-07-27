@@ -28,4 +28,3 @@ d = d * 10 + (*p++ - '0');
 params->precision = d;
 return (p);
 }
-
