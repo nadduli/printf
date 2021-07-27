@@ -1,87 +1,45 @@
-#ifndef PRINTF
-#define PRINTF
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
 
-#define BIT_SIZE 8
-#define true 1
-#define false 0
-typedef unsigned int bool;
-/*
- *   a local buffer which will be used
- *   to store data until a syscall is made to write it
- *   in the std out
- */
-#define BUFFER_SIZE 1024
-
-#include <stdarg.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include <stdarg.h> /*for varyadic functions*/
+#include <stdlib.h> /*for malloc and NULL*/
+#include <unistd.h> /*for write*/
+#include <limits.h> /* for test cases*/
 
 /**
-*struct printing_format - a struct for formating info
-*@flag: the flag used (+, -, '\0')
-*@width: the space taken during printing
-*@mod: modifier (l, h)
-*@precision: how manyt points after . in case of f
-*@zero_fill: --
-*@replaced: the total amount the format is holding
-*@validity: is this format a complete format
-*@printer: a function to handle the printing
-*/
-typedef struct printing_format
+ * struct special_cases - struct for the special cases
+ * @match: the special character to match after find a percentage
+ * @function: the associated function to be called in each specialcase
+ */
+
+typedef struct special_cases
 {
-	char flag;
-	int width;
-	char mod;
-	int precision;
-	bool zero_fill;
-	int replaced;
-	bool validity;
-	char *(*printer)(va_list, struct printing_format *);
-} printing_format;
-/*printer functions*/
-char *_putchar(va_list, printing_format *);
-char *_putstr(va_list, printing_format *);
-char *_putint(va_list, printing_format *);
-char *_putuint(va_list, printing_format *);
-char *_putbin(va_list, printing_format *);
-char *_puthex(va_list, printing_format *);
-char *_putoct(va_list, printing_format *);
-char *_putHex(va_list, printing_format *);
-char *_putadress(va_list, printing_format *);
-char *_putrts(va_list, printing_format *);
-char *_putrot13(va_list, printing_format *);
-char *_putS(va_list, printing_format *);
+	char *match;
+	int (*function)(va_list);
+} spc_t;
 
-/*printf and its helpers*/
+/*format and print data*/
 int _printf(const char *format, ...);
-printing_format *parse_format(const char *);
-int buf_push(char *, int *, char *);
-int *print(const char *, va_list, int *, char *);
 
-/*validity checker*/
-bool is_valid_id(char);
-int checkflag(printing_format *, char);
-int checkwidth(printing_format *, const char *);
-int checkprecision(printing_format *, const char *);
-int checkmod(printing_format *, const char *);
+/*writes the character c to stdout*/
+int _putchar(char c);
 
-/*parser to identify printing format*/
-printing_format *parse_format(const char *);
+/*search for match and execute the function according to this*/
+int (*mod_character_s(const char *next, int dino))(va_list);
 
-/*printer identifier*/
-char *(*get_printer(char id))(va_list, printing_format *);
+/*prints a char*/
+int print_char(va_list c);
 
-/*num_utils*/
-int _pow(unsigned int, int);
-int _numLen(unsigned int);
-int max(int, int);
-char *to_hex(int);
+/*prints a string */
+int print_string(va_list s);
 
-/*string utils*/
-int _strlen(char *);
-void rev_string(char *);
-void _toStr(unsigned long int, char *);
-char *_strcpy(char *, char *);
-char *rot13(char *);
+/*converts a string to an integer and prints its content.*/
+int print_number(va_list i);
 
-#endif /*PINTF*/
+/*converts a string to an unsigned integer and prints its content*/
+int print_unsigned(va_list u);
+
+/*prints a string in reverse*/
+int print_reverse(va_list r);
+
+#endif /* HOLBERTON_H */
